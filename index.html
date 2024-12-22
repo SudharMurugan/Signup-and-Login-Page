@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login and Sign Up Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #333;
+    }
+
+    .container {
+      background: #fff;
+      width: 400px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+    }
+
+    .form-container {
+      padding: 30px;
+    }
+
+    .form-container h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .form-container form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-container input {
+      height: 40px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 0 10px;
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+
+    .form-container input:focus {
+      border-color: #ff758c;
+      outline: none;
+      box-shadow: 0 0 5px rgba(255, 117, 140, 0.5);
+    }
+
+    .form-container button {
+      height: 40px;
+      border: none;
+      background: #ff758c;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    .form-container button:hover {
+      background: #ff5c74;
+    }
+
+    .toggle-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .toggle-container a {
+      color: #ff758c;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .toggle-container a:hover {
+      color: #ff5c74;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-container" id="login-form">
+      <h1>Login</h1>
+      <form>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <input type="text" placeholder="Username" required>
+        <input type="text" placeholder="Phone Number" required>
+        <button type="submit">Login</button>
+      </form>
+      <div class="toggle-container">
+        <p>Don't have an account? <a href="#" onclick="toggleForms('signup')">Sign Up</a></p>
+      </div>
+    </div>
+
+    <div class="form-container" id="signup-form" style="display: none;">
+      <h1>Sign Up</h1>
+      <form>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <input type="text" placeholder="Username" required>
+        <input type="text" placeholder="Phone Number" required>
+        <input type="date" placeholder="Date of Birth" required>
+        <input type="text" placeholder="Address" required>
+        <button type="submit">Sign Up</button>
+      </form>
+      <div class="toggle-container">
+        <p>Already have an account? <a href="#" onclick="toggleForms('login')">Login</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleForms(form) {
+      const loginForm = document.getElementById('login-form');
+      const signupForm = document.getElementById('signup-form');
+      if (form === 'signup') {
+        loginForm.style.display = 'none';
+        signupForm.style.display = 'block';
+      } else {
+        loginForm.style.display = 'block';
+        signupForm.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>
